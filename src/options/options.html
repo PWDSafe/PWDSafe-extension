@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>PWDSafe — Accounts</title>
+        <link rel="stylesheet" href="options.css" />
+    </head>
+    <body>
+        <h1>PWDSafe accounts</h1>
+
+        <div id="accounts"></div>
+
+        <h2>Add account</h2>
+        <form id="login-form">
+            <label>
+                Server URL
+                <input type="url" id="url" placeholder="https://pwdsafe.example.com" required />
+            </label>
+            <label>
+                Email
+                <input type="email" id="email" required autocomplete="username" />
+            </label>
+            <label>
+                Password
+                <input type="password" id="password" required autocomplete="current-password" />
+            </label>
+            <label id="totp-row" class="hidden">
+                Two-factor code
+                <input type="text" id="totp" inputmode="numeric" autocomplete="one-time-code" />
+            </label>
+            <button type="submit" id="submit">Sign in</button>
+            <p id="message" class="hidden"></p>
+        </form>
+
+        <script src="options.js"></script>
+    </body>
+</html>

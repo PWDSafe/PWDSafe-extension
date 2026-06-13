@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <header>
+            <span class="title">PWDSafe</span>
+            <button id="open-options" title="Manage accounts" class="icon-button">⚙</button>
+        </header>
+        <div class="search-row">
+            <input
+                type="search"
+                id="search"
+                placeholder="Search all credentials…"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+            />
+        </div>
+        <div id="content"><p class="empty">Loading…</p></div>
+        <script src="popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    width: 340px;
+    font-family: system-ui, sans-serif;
+    font-size: 13px;
+    color: #1f2937;
+}
+
+.search-row {
+    padding: 8px 12px 0;
+}
+
+.search-row input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.search-row input:-webkit-autofill {
+    -webkit-text-fill-color: #1f2937;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.icon-button {
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.icon-button:hover {
+    background: #f3f4f6;
+}
+
+#content {
+    padding: 8px 12px 12px;
+}
+
+.empty {
+    color: #6b7280;
+    margin: 12px 0;
+}
+
+.empty a {
+    color: #2563eb;
+}
+
+.account {
+    margin-bottom: 12px;
+}
+
+.account-label {
+    font-weight: 600;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.credential {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #fff;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+
+.cred-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    border: none;
+    background: none;
+    color: inherit;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.cred-main:hover:not(:disabled) {
+    background: #eff6ff;
+}
+
+.cred-main:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.cred-main .site {
+    font-weight: 500;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cred-main .user {
+    color: #6b7280;
+    font-size: 12px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cred-actions {
+    display: flex;
+    flex-shrink: 0;
+    border-left: 1px solid #e5e7eb;
+}
+
+.icon-btn {
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+.icon-btn:hover:not(:disabled) {
+    background: #f3f4f6;
+}
+
+.icon-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.cred-reveal {
+    flex-basis: 100%;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-top: 1px dashed #e5e7eb;
+    word-break: break-all;
+    cursor: pointer;
+    background: #f9fafb;
+}
+
+.cred-reveal.hidden {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #18181b;
+        color: #f3f4f6;
+    }
+
+    header {
+        border-bottom-color: #3f3f46;
+    }
+
+    .icon-button:hover {
+        background: #3f3f46;
+    }
+
+    .empty,
+    .credential .user,
+    .cred-main .user,
+    .account-label {
+        color: #a1a1aa;
+    }
+
+    .empty a {
+        color: #60a5fa;
+    }
+
+    .search-row input,
+    .unlock-row input {
+        background: #27272a;
+        border-color: #3f3f46;
+        color: #f3f4f6;
+    }
+
+    .search-row input:-webkit-autofill {
+        -webkit-text-fill-color: #f3f4f6;
+        -webkit-box-shadow: 0 0 0 1000px #27272a inset;
+    }
+
+    .credential {
+        background: #27272a;
+        border-color: #3f3f46;
+    }
+
+    .cred-main:hover:not(:disabled) {
+        background: #3f3f46;
+    }
+
+    .cred-actions {
+        border-left-color: #3f3f46;
+    }
+
+    .icon-btn:hover:not(:disabled) {
+        background: #3f3f46;
+    }
+
+    .cred-reveal {
+        background: #18181b;
+        border-top-color: #3f3f46;
+    }
+
+    .unlock-row button {
+        background: #3b82f6;
+    }
+}
+
+.unlock-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.unlock-row input {
+    flex: 1;
+    padding: 5px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+.unlock-row button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+.unlock-row button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}

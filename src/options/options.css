@@ -1,0 +1,176 @@
+body {
+    font-family: system-ui, sans-serif;
+    color: #1f2937;
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 15px;
+    margin-top: 32px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.empty {
+    color: #6b7280;
+}
+
+.account-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.account-info span {
+    color: #6b7280;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.status.locked {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.unlocked {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.account-row input[type='password'] {
+    width: 120px;
+    padding: 5px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+button.danger {
+    background: #dc2626;
+}
+
+button.secondary {
+    background: #6b7280;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+#login-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+}
+
+#login-form input {
+    padding: 6px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+#login-form button {
+    align-self: flex-start;
+}
+
+#message {
+    font-size: 13px;
+    color: #92400e;
+    background: #fef3c7;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+#message.error {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #18181b;
+        color: #f3f4f6;
+    }
+
+    .empty,
+    .account-info span {
+        color: #a1a1aa;
+    }
+
+    .account-row {
+        border-color: #3f3f46;
+    }
+
+    .account-row input[type='password'],
+    #login-form input {
+        background: #27272a;
+        border-color: #3f3f46;
+        color: #f3f4f6;
+    }
+
+    .status.locked {
+        background: #78350f;
+        color: #fde68a;
+    }
+
+    .status.unlocked {
+        background: #064e3b;
+        color: #a7f3d0;
+    }
+
+    #message {
+        background: #78350f;
+        color: #fde68a;
+    }
+
+    #message.error {
+        background: #7f1d1d;
+        color: #fecaca;
+    }
+}
