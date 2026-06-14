@@ -1,0 +1,19 @@
+{
+  "name": "pwdsafe-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Login to one or more PWDSafe instances and autofill usernames and passwords.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "build:firefox": "node build.js firefox",
+    "build:chrome": "node build.js chrome",
+    "lint:firefox": "web-ext lint -s dist/firefox",
+    "package:firefox": "web-ext build -s dist/firefox -a artifacts -n pwdsafe-firefox-{version}.zip --overwrite-dest",
+    "package:chrome": "web-ext build -s dist/chrome -a artifacts -n pwdsafe-chrome-{version}.zip --overwrite-dest",
+    "package": "npm run package:firefox && npm run package:chrome"
+  },
+  "devDependencies": {
+    "web-ext": "^8.3.0"
+  }
+}
