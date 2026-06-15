@@ -108,13 +108,21 @@ function renderCredentialRow(group, cred, section) {
 
     const site = document.createElement('span')
     site.className = 'site'
-    site.textContent = cred.site
+    site.textContent = cred.name
 
     const user = document.createElement('span')
     user.className = 'user'
     user.textContent = cred.username
 
     main.append(site, user)
+
+    if (cred.url) {
+        const url = document.createElement('span')
+        url.className = 'url'
+        url.textContent = cred.url
+        main.append(url)
+    }
+
     row.appendChild(main)
 
     const actions = document.createElement('div')

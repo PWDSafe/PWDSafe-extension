@@ -23,9 +23,9 @@ function normalizeUrl(url) {
 }
 
 /**
- * Candidate substrings to match against the free-text "site" field of
- * credentials, derived from a page hostname. The server matches with
- * `site LIKE %domain%`, so we pass progressively shorter suffixes
+ * Candidate substrings to match against the "url" field of credentials,
+ * derived from a page hostname. The server matches with
+ * `url LIKE %domain%`, so we pass progressively shorter suffixes
  * (registrable-domain-ish) so that e.g. a credential for "example.com"
  * still matches a page on "accounts.example.com", and vice versa.
  */
@@ -42,14 +42,14 @@ function domainCandidates(hostname) {
 }
 
 /**
- * Extract candidate hostnames/IPs from a credential's free-text "site"
- * field. The field may be a full URL, a "host/path" string, just a
- * hostname, or a human label that mentions a host anywhere in it (e.g.
+ * Extract candidate hostnames/IPs from a credential's "url" field. The
+ * field may be empty, a full URL, a "host/path" string, just a hostname,
+ * or a human label that mentions a host anywhere in it (e.g.
  * "Portainer (192.168.130.3:9443)"), so every delimiter-separated token
  * is treated as a candidate.
  */
-function extractHostnames(site) {
-    return site
+function extractHostnames(url) {
+    return (url ?? '')
         .trim()
         .toLowerCase()
         .split(/[\s/:?#()]+/)
@@ -57,8 +57,8 @@ function extractHostnames(site) {
 }
 
 /**
- * Whether `siteHost` (from a credential) is relevant to `hostname` (the
- * current page). The broad `LIKE %domain%` search can return unrelated
+ * Whether `siteHost` (from a credential's url) is relevant to `hostname`
+ * (the current page). The broad `LIKE %domain%` search can return unrelated
  * sibling subdomains (e.g. "other.example.com" when matching against
  * "example.com" derived from "mail.example.com"), so this restricts
  * results to the same host, a parent domain of it, or a subdomain of it.
@@ -209,7 +209,7 @@ async function getMatchesForUrl(url) {
                 for (const c of found) {
                     if (
                         !seen.has(c.id) &&
-                        extractHostnames(c.site).some((h) => isRelatedDomain(hostname, h))
+                        extractHostnames(c.url).some((h) => isRelatedDomain(hostname, h))
                     ) {
                         seen.add(c.id)
                         credentials.push(c)

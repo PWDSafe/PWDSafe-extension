@@ -411,7 +411,7 @@ function renderEntryList(el, entries, passwordField) {
         const filtered = query
             ? entries.filter(
                   (cred) =>
-                      cred.site.toLowerCase().includes(query) || cred.username.toLowerCase().includes(query),
+                      cred.name.toLowerCase().includes(query) || cred.username.toLowerCase().includes(query),
               )
             : entries
 
@@ -430,7 +430,7 @@ function renderEntryList(el, entries, passwordField) {
 
             const site = document.createElement('span')
             site.className = 'site'
-            site.textContent = cred.site
+            site.textContent = cred.name
 
             const user = document.createElement('span')
             user.className = 'user'

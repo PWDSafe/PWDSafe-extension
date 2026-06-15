@@ -118,7 +118,8 @@ header {
     white-space: nowrap;
 }
 
-.cred-main .user {
+.cred-main .user,
+.cred-main .url {
     color: #6b7280;
     font-size: 12px;
     max-width: 100%;
@@ -183,6 +184,7 @@ header {
     .empty,
     .credential .user,
     .cred-main .user,
+    .cred-main .url,
     .account-label {
         color: #a1a1aa;
     }
